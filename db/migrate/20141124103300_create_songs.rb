@@ -5,6 +5,7 @@ class CreateSongs < ActiveRecord::Migration
       t.string :url
       t.integer :length_seconds
       t.integer :channel_id
+      t.integer :user_id
       t.timestamps
     end
   end

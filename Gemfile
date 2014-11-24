@@ -26,14 +26,15 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
-# ********* Use jquery as the JavaScript library
-gem 'jquery-rails'
-
-# ************* Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
 
 # ************* Manage users
 gem 'devise'
+
+# ************* to check email
+gem "letter_opener", :group => :development
+
+# *********** to login with facebook
+gem 'omniauth-facebook'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

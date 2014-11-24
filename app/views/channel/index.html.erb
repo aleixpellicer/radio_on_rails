@@ -1,0 +1,7 @@
+<h2>Channels page</h2>
+
+<ul>
+	<% Channel.find_each do |channel| %>
+	<li><%= channel.name %></li>
+	<% end %>
+</ul>
