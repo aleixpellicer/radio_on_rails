@@ -11,3 +11,7 @@ test_user = User.create(created_at: "2014-11-24 12:45:03", password: "12345678",
 
 general_channel = Channel.create(name: "General", user_id: test_user.id)
 rock_channel = Channel.create(name: "Rock", user_id: test_user.id)
+
+vaina = Queuedsong.create(name: "Una vaina loca", url: "IPBmNNWvUiQ", length_seconds: 185, channel_id: general_channel.id, user_id: test_user.id)
+serenata = Queuedsong.create(name: "Serenata rap", url: "4MgKG87M0sc", length_seconds: 287, channel_id: general_channel.id, user_id: test_user.id)
+

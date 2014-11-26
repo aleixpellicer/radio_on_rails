@@ -1,3 +1,96 @@
 // Place all the styles related to the channel controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// general template
+.player				{ width:100%; height:100%; overflow:hidden; position:relative; }
+
+.loading			{ width:100%; height:100%; position:absolute; top:0; left:0; z-index:9999; background:#292929 url(splash.gif) center center no-repeat; }
+
+.ideo		{ width:100%; height:100%; min-height:400px; z-index:1 }
+.video img	{ position:absolute; top:0; left:0; width:100%; z-index:999; }
+
+.sidebar					{ z-index:9999; height:100%; background: #383838 url(background-sidebar.png) 0 30px no-repeat; position:absolute; top:0; right:0; width:400px; padding:0; }
+.sidebar-header						{ width:400px; height:30px; margin:0; padding:0; position:relative; }
+
+.closePlaylistBttn	{ position:absolute; top:2px; right:400px; z-index:10000; height:30px; width:18px; overflow:hidden; }
+.closePlaylistBttn img	{ width:18px; height:29px; }
+.openPlaylistBttn	{ position:absolute; top:2px; right:400px; z-index:10000; height:30px; width:18px; overflow:hidden; display:none; }
+.openPlaylistBttn img	{ width:18px; height:29px; }
+
+
+.sidebar-channel				{ float:right; color:#c1c1c1; text-shadow: 1px 1px #000; text-transform:uppercase; width:80px; font-size:1.2em; margin-top:5px; text-align:right; margin-right:12px; }
+.sidebar-online-users		{ float:right; color:#c1c1c1; text-shadow: 1px 1px #000; text-transform:uppercase; width:60px; font-size:1.2em; text-align:right; margin-top:5px; margin-right:12px; }
+
+
+.playing-video-box								{ width:400px; height:126px; }
+
+
+.voting-box				{ width:68px; height:106px; float:left; margin-top:20px; margin-left:12px; }
+.voting-box .upvote 	{ display:block; font-size:0; width:29px; height:18px; margin-top:5px; margin-left:20px; background:url(btn-upvote.png) -29px 0px no-repeat; }
+.voting-box .heart-votes{ font-family: 'Open Sans', sans-serif; font-size:3.4em; color:#c1c1c1; text-shadow: 1px 1px #000; height:35px; width:68px; text-align:center; margin-top:-5px; }
+.voting-box .downvote	{ display:block; font-size:0; width:29px; height:18px; margin-top:17px; margin-left:20px; background:url(btn-downvote.png) -29px 0px no-repeat; }
+
+.playing-video-box h3					{ float:left; width:298px;  margin-top:12px; margin-left:10px; color:#c1c1c1; font-size:1.6em; line-height:1.2em; text-shadow: 1px 1px #000 }
+
+.playing-video-box .user				{ width:298px; height:25px; margin-top:2px; float:left; text-align:center; text-shadow: 1px 1px #000; margin-left:10px; }
+.playing-video-box .user .enviadapor	{ font-size:1.3em; line-height:1.1em; float:left; color:#838383; }
+.playing-video-box .user .username		{ font-size:1.3em; line-height:1.1em; float:left; color:#c1c1c1; margin-left:5px; }
+.playing-video-box .user .usercors		{ font-size:1.3em; line-height:1.1em; float:left; color:#838383; margin-left:5px; }
+
+.control-box				{ width:298px; height:29px; float:left; margin-left:10px; }
+.control-box a				{ width:24px; display:block; height:29px; float:left; margin-right:4px; }
+.control-box .fav			{ background:url(btn-fav.png) 0px 0px no-repeat; }
+.control-box .fav:active	{ background:url(btn-fav.png) 0px -29px no-repeat; }
+.control-box .fav.faved		{ background-position:0px -29px }
+.control-box .share			{ background:url(btn-share.png) 0px 0px no-repeat; }
+.control-box .share:active	{ background:url(btn-share.png) 0px -29px no-repeat; }
+.control-box .report		{ background:url(btn-report.png) 0px 0px no-repeat; margin-right:29px; }
+.control-box .report:active	{ background:url(btn-report.png) 0px -29px no-repeat; }
+
+.control-box .mute			{ background:url(btn-mute.png) 0px 0px no-repeat; }
+.control-box .mute:active	{ background:url(btn-mute.png) 0px -29px no-repeat; }
+.control-box .unmute		{ background:url(btn-unmute.png) 0px 0px no-repeat; }
+.control-box .unmute:active	{ background:url(btn-unmute.png) 0px -29px no-repeat; }
+
+.control-box .volume							{ height:9px; width:93px; float:left; margin-top:10px; margin-right:7px; background:url(volume-slider-outer.png) top left no-repeat; }
+
+.control-box .volume .slider					{ position:relative; height:9px; width:83px;  }
+.control-box .volume .slider .ui-slider-handle 	{ position: absolute; z-index:2; cursor: default; width:14px; height:14px; top:-2px; background:url(volume-slider-selector.png) top center no-repeat; }
+.control-box .volume .slider .ui-slider-range 	{ position: absolute; z-index:1; height:9px; width:83px; background:url(volume-slider-inner.png) top left no-repeat; }
+
+.control-box .quality			{ background:url(btn-quality.png) 0px 0px no-repeat; }
+.control-box .quality:active	{ background:url(btn-quality.png) 0px -29px no-repeat; }
+
+.control-box .fullscreen	{ width:29px; background:url(btn-fullscreen.png) 0px 0px no-repeat; }
+.control-box .fullscreen:active	{ background:url(btn-fullscreen.png) 0px -29px no-repeat; }
+
+
+
+.progress-bar 			{ height:4px; margin-left:12px; width:375px; background:#272727; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; }
+.progress-bar .bar	 	{ height:4px; width:2px; background:#c1c1c1; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; }
+
+
+
+.song-queue	{ width:100%; margin-top:15px; }
+.song-queue h2 { text-transform:uppercase; font-size:1.2em; margin-top:15px; text-align:center; color:#535353; text-shadow: 1px 1px #262626; }
+
+.song-list					{ font-size:1.2em; margin-left:12px; width:375px; }
+.song-list tr				{ width:100%; height:40px; background:url(separator.png) bottom left repeat-x }
+.song-list tr.titol			{ height:30px;  }
+.song-list tr td				{ padding:0px 0px; font-size:1em; line-height:1.2em; color:#c1c1c1; text-shadow: 1px 1px #000; }
+.song-list tr td.song-title 	{ width:80%; }
+.song-list tr td.song-author 		{ width:20%; text-align:right; }
+.song-list tr td.song-title h3 	{ padding:0; margin:0; }
+.song-list tr td.song-author span	{  }
+
+.song-list tr:last-child		{  }
+.song-list tr:first-child td { border-top:0; }
+
+
+.submit-song		{ width:400px; height:66px; background:url(background-submit.png) top left no-repeat; position:absolute; bottom:0px; left:0px; }
+
+.submit-song input { color:#999;  width:250px; float:left; margin-top:22px; height:30px; margin-left:12px; font-family: 'Open Sans', sans-serif; font-size:1.2em;  border:0; }
+
+.submit-song-bttn	{ display:block; width:111px; height:32px; margin-top:20px; margin-right:12px; text-decoration:none; font-size:1.3em; padding-top:7px; text-align:center; float:right; background:url(btn-submit-song.png) top left no-repeat; color:#c1c1c1; text-shadow: 1px 1px #000; }
+

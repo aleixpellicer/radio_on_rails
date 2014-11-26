@@ -1,0 +1,63 @@
+<section id="player" class="player">
+
+    <div id="loading" class="loading"></div>
+    <article class="video"></article>
+        
+    <aside id="sidebar" class="sidebar">           
+        
+        <header class="sidebar-header">
+            <a href="#" title="Close playlist"><%= image_tag("btn-hide-sidebar.png", class: "closePlaylistBttn", alt: "Close") %></a>
+            <a href="#" title="Open playlist"><%= image_tag("btn-show-sidebar.png", class: "openPlaylistBttn", alt: "Open") %></a>
+            
+        	<div class="sidebar-online-users">1 listener</div>
+            <div class="sidebar-channel">canal General</div>
+        </header>
+        
+        <article class="playing-video-box">
+         
+            <div class="voting-box">
+                <a class="upvote" class="mensaje" href="#">Upvote</a>
+                <div class="heart-votes"><span></span>♥</div>
+                <a class="downvote" class="mensaje" href="#">Downvote</a>
+            </div>
+            
+            <h3>Loading...</h3>
+            
+            <div class="user">
+                    <div class="enviadapor">enviado por</div><div class="username">Loading...</div><div class="usercors">3h</div>
+            </div>
+            
+            <div class="control-box">
+                <a class="fav" href="#" alt="Add this song to favs"></a>
+                <a class="share" href="#"></a>
+                <a class="report" href="#"></a>
+                <a class="mute" href="#"></a>
+                <div class="volume"><div class="slider"></div></div>
+                <a class="quality" href="#"></a>
+                <a class="fullscreen" href="#"></a>
+            </div>
+            
+        </article>
+        
+        <br style="clear:both" />
+        
+        <div class="progress-bar"><div class="bar"></div></div>
+        
+        <div id="queue" class="song-queue"> 
+            <table class="song-list"><tr class="titol"><td class="song-title">PRÓXIMAS CANCIONES</td><td class="song-author">ENVIADA POR</td></tr></table>
+            <div class="inner">
+            	<table class="song-list" class="song-list">
+                	<% Queuedsong.find_each do |song| %>
+					<tr><td class="cancion"><h3 class="id_"><%= song.name %></h3></td><td class="autor"><%= song.user_id %><span>111</span></td></tr>
+					<% end %>
+                </table>
+            </div>
+        </div>
+		        
+        <form name="submitSong" class="submit-song" action="ajax/addFast.php" method="post">
+        <input type="text" name="q" class="text mensaje" class="song-input" placeholder="Song title and author name..." />
+
+        <a class="submit-song-bttn" href="#">Submit song</a>
+        </form>
+    </aside>  
+</section>
