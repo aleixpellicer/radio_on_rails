@@ -15,3 +15,20 @@ rock_channel = Channel.create(name: "Rock", user_id: test_user.id)
 vaina = Queuedsong.create(name: "Una vaina loca", url: "IPBmNNWvUiQ", length_seconds: 185, channel_id: general_channel.id, user_id: test_user.id)
 serenata = Queuedsong.create(name: "Serenata rap", url: "4MgKG87M0sc", length_seconds: 287, channel_id: general_channel.id, user_id: test_user.id)
 
+# sic slipnot
+# https://www.youtube.com/watch?v=w0Bfxv4ADso
+
+# arcade fire, ready to start
+# https://www.youtube.com/watch?v=9oI27uSzxNQ
+
+# muse, butterflies and hurricanes
+# https://www.youtube.com/watch?v=YDsLKEado_o
+
+# Madonna, Hung up
+# https://www.youtube.com/watch?v=EDwb9jOVRtU
+
+# Radioheart, creep
+# https://www.youtube.com/watch?v=XFkzRNyygfk
+
+# Everything in its right place
+# https://www.youtube.com/watch?v=NoU3meEtZ2E
