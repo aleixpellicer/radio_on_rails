@@ -1,1 +1,0 @@
-#<YouTubeIt::Model::Video:0xa4682c8>
