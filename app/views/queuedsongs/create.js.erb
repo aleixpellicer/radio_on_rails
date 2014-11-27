@@ -1,0 +1,9 @@
+$(document).ready(function(data) {
+  
+  $("#new_queuedsong").unbind("ajax:success").unbind("ajax:error").on("ajax:success", function(evt, data, status, xhr) {
+    oQueue.addsong(<%= @song.id %>, "<%= @song.name %>", <%= @song.user_id %>);
+  }).on("ajax:error", function(xhr, status, error) {
+    alert('error');
+  });
+
+});

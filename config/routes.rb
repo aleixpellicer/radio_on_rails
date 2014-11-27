@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: "channel#index"
 
   resources :channel
+  resources :queuedsongs
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,6 +1,6 @@
 <section id="player" class="player">
   <div id="loading" class="loading"></div>
-  <article class="video"></article>
+  <div id="video" class="video"></div>
   <aside id="sidebar" class="sidebar">
     <header class="sidebar-header">
       <a href="#" title="Close playlist"><%= image_tag("btn-hide-sidebar.png", class: "closePlaylistBttn swap-sidebar", alt: "Close") %></a>
@@ -40,9 +40,11 @@
         </table>
       </div>
     </div>     
-    <form name="submitSong" class="submit-song" action="ajax/addFast.php" method="post">
-    <input type="text" name="q" class="text mensaje" class="song-input" placeholder="Song title and author name..." />
-    <a class="submit-song-bttn" href="#">Submit song</a>
-    </form>
+    <div class="submit-song">
+      <%= form_for @queuedsongs, :remote => true, :disable_width => "Submitting...", :url => { :controller => "queuedsongs", :action => "create" } do |f| %>
+        <%= f.text_field :q, class:"song-input", placeholder: "Song title and author name..." %>
+        <%= f.submit 'Submit song', class:"submit-song-bttn" %>
+      <% end %>
+    </div>
   </aside>  
 </section>

@@ -3,6 +3,6 @@ class ChannelController < ApplicationController
     
   end
   def show
-  
+    @queuedsongs = Queuedsong.new
   end
 end

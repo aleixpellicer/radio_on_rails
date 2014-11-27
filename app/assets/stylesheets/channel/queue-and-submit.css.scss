@@ -52,7 +52,7 @@
   bottom:0px;
   left:0px;
 }
-.submit-song input {
+.song-input {
   color:#999;
   width:250px;
   float:left;
@@ -66,7 +66,7 @@
 .submit-song-bttn {
   display:block;
   width:111px;
-  height:32px;
+  height:35px;
   margin-top:20px;
   margin-right:12px;
   text-decoration:none;
@@ -74,6 +74,7 @@
   padding-top:7px;
   text-align:center;
   float:right;
+  border:0;
   background:url(image_path('btn-submit-song.png')) top left no-repeat;
   color:#c1c1c1;
   text-shadow: 1px 1px #000;

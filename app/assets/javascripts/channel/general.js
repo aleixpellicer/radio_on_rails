@@ -4,6 +4,7 @@ $(document).ready(function() {
 	// queue = Queue.new();
 	oGui = new Gui();
 	oTemplate = new Template();
+	oQueue = new Queue();
 
 	oTemplate.update();
   
@@ -25,6 +26,15 @@ $(document).ready(function() {
     oGui.fullscreen = !oGui.fullscreen;
     oGui.swapSidebar();
   }, false);
+
+  $("#new_queuedsong").on("ajax:beforeSend", function() {
+  	$(".song-input").val('');
+  	alert("hola");
+  });
+
+  setTimeout(function() {
+  	$('#loading').fadeOut("slow");
+  }, 3000);
 
 	// player.play();
 
