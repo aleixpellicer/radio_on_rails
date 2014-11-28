@@ -60,13 +60,13 @@
 
 .volume  {
   height:9px;
-  width:93px;
+  width:92px;
   float:left;
   margin-top:10px;
   margin-right:7px;
-  background:url(image_path('volume-slider-outer.png')) top left no-repeat;
+  background: transparent url(image_path('volume-slider-inner.png')) top left no-repeat;
 }
-.slider  { position:relative; height:9px; width:83px;
+.slider  { position:relative; height:9px; width:82px;
 }
 .slider .ui-slider-handle {
   position:absolute;
@@ -75,13 +75,25 @@
   width:14px;
   height:14px;
   top:-2px;
+  border: none;
+  background-color: none;
+  margin-left:0px;
+  outline: none 0px;
   background:url(image_path('volume-slider-selector.png')) top center no-repeat;
 }
 .slider .ui-slider-range {
   position: absolute;
   z-index:1;
   height:9px;
-  width:83px; background:url(image_path('volume-slider-inner.png')) top left no-repeat;
+  width:88px;
+  background-color: none;
+  padding-left:4px;
+  background:url(image_path('volume-slider-outer.png')) top left no-repeat;
+}
+
+.ui-widget-content {
+  background: none;
+  border: none;
 }
 
 .progress-bar {

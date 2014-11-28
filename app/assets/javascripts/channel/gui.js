@@ -1,16 +1,28 @@
 (function(){
 
   Gui = function(){
-    fullscreen = false;
-    sidebarOpen = true;
+    this.fullscreen = false;
+    this.sidebarOpen = false;
+
+    $("#slider").slider({
+      range: "min",
+      min: 0,
+      max: 100,
+      value: 100,
+      slide: function(event,ui){
+        player.setVolume(ui.value);
+        player.unMute();
+        $('#unmute').attr('id', 'mute');
+      }
+    });
   };
 
   Gui.prototype = {
     fullScreen: function(){
       var player = document.getElementById("player");
       if (player) {
-        console.log(fullscreen);
-        if(fullscreen)
+        console.log(this.fullscreen);
+        if(this.fullscreen)
         {
           if (document.exitFullscreen) {
             document.exitFullscreen();
@@ -36,26 +48,30 @@
         }
       }
     },
-    swapSidebar: function(){
+    swapSidebar: function(click){
       videoWidth = oTemplate.videoWidth;
       sidebarWidth = oTemplate.sideBarWidth;
       defaultSidebarWidth = oTemplate.defaultSidebarWidth;
 
-      if(sidebarOpen)
+
+      if(this.sidebarOpen)
       {
-        $("#sidebar").animate({width:"0px"}, {duration:1000, easing:"easeOutQuint", complete: function() { oTemplate.update(); }}).css("overflow","visible");
-        $("#video").animate({width:(videoWidth+sidebarWidth)+"px"}, {duration:1000, easing:"easeOutQuint"});
-        $("#loading").animate({width:(videoWidth+sidebarWidth)+"px"}, {duration:1000, easing:"easeOutQuint"});
-        $(".closePlaylistBttn").fadeOut();
-        $(".openPlaylistBttn").fadeIn();
-        sidebarOpen = false;
+        if(this.fullscreen==false || click)
+        {
+          $("#sidebar").animate({width:"0px"}, {duration:1000, easing:"easeOutQuint", complete: function() { oTemplate.update(); }}).css("overflow","visible");
+          $("#video").animate({width:(videoWidth+sidebarWidth)+"px"}, {duration:1000, easing:"easeOutQuint"});
+          $("#loadnextsong").animate({width:(videoWidth+sidebarWidth)+"px"}, {duration:1000, easing:"easeOutQuint"});
+          $(".closePlaylistBttn").fadeOut();
+          $(".openPlaylistBttn").fadeIn();
+          this.sidebarOpen = false;
+        }
       } else  {
         $("#sidebar").animate({width:defaultSidebarWidth+"px"}, {duration:1000, easing:"easeOutQuint", complete: function() { oTemplate.update(); }}).css("overflow","visible");
         $("#video").animate({width:(videoWidth-defaultSidebarWidth)+"px"}, {duration:1000, easing:"easeOutQuint"});
-        $("#loading").animate({width:(videoWidth-defaultSidebarWidth)+"px"}, {duration:1000, easing:"easeOutQuint"});
+        $("#loadnextsong").animate({width:(videoWidth-defaultSidebarWidth)+"px"}, {duration:1000, easing:"easeOutQuint"});
         $(".closePlaylistBttn").fadeIn();
         $(".openPlaylistBttn").fadeOut();
-        sidebarOpen = true;
+        this.sidebarOpen = true;
       }
       
     }

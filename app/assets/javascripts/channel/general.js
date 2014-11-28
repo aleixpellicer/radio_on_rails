@@ -13,27 +13,27 @@ $(document).ready(function() {
   });
 
   document.addEventListener("fullscreenchange", function () {
-    oGui.fullscreen = !oGui.fullscreen;
     oGui.swapSidebar();
+    oGui.fullscreen = !oGui.fullscreen;
   }, false);
    
   document.addEventListener("mozfullscreenchange", function () {
-    oGui.fullscreen = !oGui.fullscreen;
     oGui.swapSidebar();
+    oGui.fullscreen = !oGui.fullscreen;
   }, false);
    
   document.addEventListener("webkitfullscreenchange", function () {
-    oGui.fullscreen = !oGui.fullscreen;
     oGui.swapSidebar();
+    oGui.fullscreen = !oGui.fullscreen;
   }, false);
 
   $("#new_queuedsong").on("ajax:beforeSend", function() {
   	$(".song-input").val('');
-  	alert("hola");
   });
 
   setTimeout(function() {
   	$('#loading').fadeOut("slow");
+    oGui.swapSidebar();
   }, 3000);
 
 	// player.play();
@@ -51,7 +51,7 @@ $(document).ready(function() {
 	});
 
 	$('.swap-sidebar').click( function(e){
-		oGui.swapSidebar();
+		oGui.swapSidebar(true);
 	});
 
 	// $('#mute').click( function(e){

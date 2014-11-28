@@ -13,6 +13,7 @@
       this.setQueueHeight();
       this.setVideoWidth();
       this.setLoadingWidth();
+      this.setNoSongsWidth();
     },
     setQueueHeight: function(){
       $('#queue').height(this.bodyHeight-40);
@@ -21,7 +22,10 @@
       $('#video').width(this.videoWidth+"px");
     },
     setLoadingWidth: function(){
-      $('#loading').width(this.videoWidth+"px");
+      $('#loadnextsong').width(this.videoWidth+"px");
+    },
+    setNoSongsWidth: function(){
+      $('#nosongs').width(this.videoWidth+"px");
     }
   };
 
