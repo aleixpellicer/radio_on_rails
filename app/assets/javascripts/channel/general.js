@@ -36,6 +36,7 @@ $(document).ready(function() {
     oGui.swapSidebar();
   }, 3000);
 
+
 	// player.play();
 
 	// $('#play').click( function(e){

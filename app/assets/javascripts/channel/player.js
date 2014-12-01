@@ -34,12 +34,34 @@
   function onPlayerReady(event) {
     event.target.playVideo();
   }
-  
+
+  updater = null;
   function onPlayerStateChange(event) {
     // if (event.data == YT.PlayerState.PLAYING && !done) {
     //   setTimeout(stopVideo, 6000);
     //   done = true;
     // }
+    switch(event.data)
+    {
+      case YT.PlayerState.ENDED:
+        $("#loadnextsong").show();
+      break;
+      case YT.PlayerState.CUED:
+        
+      break;
+      case YT.PlayerState.PLAYING:
+        videoLength = player.getDuration();
+        $("#loadnextsong").fadeOut("slow");
+        window.clearInterval(updater);
+        updater = setInterval(function(){
+          currentTime = player.getCurrentTime();
+          currentBarPosition = (currentTime/videoLength)*100;
+          $(".bar").animate({
+            width: currentBarPosition+"%"
+          }, {duration:1000, queue:false});
+        }, 1000);
+      break;
+    }
   }
 
   function stopVideo() {
