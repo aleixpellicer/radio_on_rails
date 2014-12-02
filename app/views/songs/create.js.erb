@@ -1,7 +1,7 @@
 $(document).ready(function(data) {
   
   $("#new_song").unbind("ajax:success").unbind("ajax:error").on("ajax:success", function(evt, data, status, xhr) {
-    oQueue.addsong(<%= @song.id %>, "<%= @song.name %>", <%= @song.user_id %>);
+    oQueue.update();
   }).on("ajax:error", function(xhr, status, error) {
     alert('error');
   });

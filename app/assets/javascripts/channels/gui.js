@@ -9,7 +9,6 @@
     fullScreen: function(){
       var player = document.getElementById("player");
       if (player) {
-        console.log(this.fullscreen);
         if(this.fullscreen)
         {
           if (document.exitFullscreen) {

@@ -36,14 +36,12 @@
       <table class="song-list"><tr class="titol"><td class="song-title">PRÓXIMAS CANCIONES</td><td class="song-author">ENVIADA POR</td></tr></table>
       <div class="inner">
         <table id="song-list" class="song-list" class="song-list">
-          <% Song.find_each do |song| %>
-          <tr><td class="song-title"><h3 id="id_something"><%= song.name %></h3></td><td class="song-author"><%= song.user_id %><span>111</span></td></tr>
-          <% end %>
+          
         </table>
       </div>
     </div>     
     <div class="submit-song">
-      <%= form_for [@channel, @song], :remote => true, :disable_width => "Submitting..." do |f| %>
+      <%= form_for [@channel, @song], :remote => true do |f| %>
         <%= f.text_field :q, class:"song-input", placeholder: "Song title and author name..." %>
         <%= f.submit 'Submit song', class:"submit-song-bttn" %>
       <% end %>

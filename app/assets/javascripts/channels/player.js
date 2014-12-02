@@ -4,7 +4,7 @@
     
     this.muted = false;
     updater = null;
-    videopooling = null;
+    getCurrentSongTimeout = 0;
     topPlayer = this;
     this.channel_id = $('#player').data('channel-id');
     paused = false;
@@ -85,38 +85,31 @@
     },
     getcurrentsong: function(){
       channel_id = this.channel_id;
-      $.getJSON("/channels/"+ channel_id  +"/songs/show.json", function( data ) {
-        
-        if(data.error)
-        {
-          console.log("Error: " + data.error);
-          console.log("videopooling started");
-
-          window.clearInterval(videopooling);
-          videopooling = setInterval(function(){
-            $.getJSON("/channels/"+ channel_id +"/songs/show.json", function( data ) {
-              if(!data.error)
+      (function videopolling(){
+         setTimeout(function(){
+            $.getJSON("/channels/"+ channel_id  +"/songs/show.json", function( data ) {
+              
+              if(data.error)
               {
-                window.clearInterval(videopooling);
+                //console.log("Error: " + data.error);
+                //console.log("videopooling started");
+                getCurrentSongTimeout = 5000;
+                videopolling();
+              }
+              else
+              {
+                console.log(data.song);
+                
                 topPlayer.player.loadVideoById({videoId:data.song.url, startSeconds:data.time});
                 $('#sent-by-user').html();
                 $('#song-name').html(data.song.name);
+                oQueue.update();
+                getCurrentSongTimeout = 0;
                 paused = false;
               }
             });
-          }, 5000);
-        }
-        else
-        {
-          console.log(data.song);
-          
-          topPlayer.player.loadVideoById({videoId:data.song.url, startSeconds:data.time});
-          $('#sent-by-user').html();
-          $('#song-name').html(data.song.name);
-          paused = false;
-        }
-
-      });
+        }, getCurrentSongTimeout);
+      })();
     },
     mute: function(){
       getVolume = topPlayer.player.getVolume();
