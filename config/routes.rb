@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
   
   devise_for :users,  :controllers => {sessions: 'sessions', omniauth_callbacks: 'users/omniauth_callbacks' }
-  root to: "channel#index"
+  root to: "channels#index"
 
-  resources :channel
-  resources :queuedsongs
+
+
+  resources :channels do
+    resources :songs
+    get 'queue' => 'songs#queue'
+  end
+
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

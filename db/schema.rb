@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141126095842) do
+ActiveRecord::Schema.define(version: 20141201131943) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,34 +23,13 @@ ActiveRecord::Schema.define(version: 20141126095842) do
     t.datetime "updated_at"
   end
 
-  create_table "playedsongs", force: true do |t|
+  create_table "songs", force: true do |t|
     t.string   "name"
     t.string   "url"
     t.integer  "length_seconds"
     t.integer  "channel_id"
     t.integer  "user_id"
-    t.datetime "played_time"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "playingsongs", force: true do |t|
-    t.string   "name"
-    t.string   "url"
-    t.integer  "length_seconds"
-    t.integer  "channel_id"
-    t.integer  "user_id"
-    t.datetime "startedplaying_time"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "queuedsongs", force: true do |t|
-    t.string   "name"
-    t.string   "url"
-    t.integer  "length_seconds"
-    t.integer  "channel_id"
-    t.integer  "user_id"
+    t.datetime "played"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

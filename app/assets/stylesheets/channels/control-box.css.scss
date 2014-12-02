@@ -1,0 +1,115 @@
+.control-box {
+  width:298px;
+  height:29px;
+  float:left;
+  margin-left:10px;
+}
+.icon {
+  width:24px;
+  display:block;
+  height:29px;
+  float:left;
+  margin-right:4px;
+}
+.fav{
+  background:url(image_path('btn-fav.png')) 0px 0px no-repeat;
+}
+.fav:active {
+  background:url(image_path('btn-fav.png')) 0px -29px no-repeat;
+}
+.fav.faved{
+  background-position:0px -29px
+}
+.share {
+  background:url(image_path('btn-share.png')) 0px 0px no-repeat;
+}
+.share:active {
+  background:url(image_path('btn-share.png')) 0px -29px no-repeat;
+}
+.report {
+  background:url(image_path('btn-report.png')) 0px 0px no-repeat; margin-right:29px;
+}
+.report:active {
+  background:url(image_path('btn-report.png')) 0px -29px no-repeat;
+}
+.mute {
+  background:url(image_path('btn-mute.png')) 0px 0px no-repeat;
+}
+.mute:active {
+  background:url(image_path('btn-mute.png')) 0px -29px no-repeat;
+}
+.unmute  {
+  background:url(image_path('btn-unmute.png')) 0px 0px no-repeat;
+}
+.unmute:active{
+  background:url(image_path('btn-unmute.png')) 0px -29px no-repeat;
+}
+.quality{
+  background:url(image_path('btn-quality.png')) 0px 0px no-repeat;
+}
+.quality:active  {
+  background:url(image_path('btn-quality.png')) 0px -29px no-repeat;
+}
+.fullscreen  {
+  width:28px;
+  background:url(image_path('btn-fullscreen.png')) 0px 0px no-repeat;
+}
+.fullscreen:active {
+  background:url(image_path('btn-fullscreen.png')) 0px -29px no-repeat;
+}
+
+.volume  {
+  height:9px;
+  width:92px;
+  float:left;
+  margin-top:10px;
+  margin-right:7px;
+  background: transparent url(image_path('volume-slider-inner.png')) top left no-repeat;
+}
+.slider  { position:relative; height:9px; width:82px;
+}
+.slider .ui-slider-handle {
+  position:absolute;
+  z-index:2;
+  cursor: default;
+  width:14px;
+  height:14px;
+  top:-2px;
+  border: none;
+  background-color: none;
+  margin-left:0px;
+  outline: none 0px;
+  background:url(image_path('volume-slider-selector.png')) top center no-repeat;
+}
+.slider .ui-slider-range {
+  position: absolute;
+  z-index:1;
+  height:9px;
+  width:88px;
+  background-color: none;
+  padding-left:4px;
+  background:url(image_path('volume-slider-outer.png')) top left no-repeat;
+}
+
+.ui-widget-content {
+  background: none;
+  border: none;
+}
+
+.progress-bar {
+  height:4px;
+  margin-left:12px;
+  width:375px;
+  background:#272727;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+.progress-bar .bar {
+  height:4px;
+  width:2px;
+  background:#c1c1c1;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}

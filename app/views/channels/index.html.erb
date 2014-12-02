@@ -1,0 +1,25 @@
+<header>
+	<h1 class="logo">Radio</h1>
+	<section class="log_in">
+		<!-- <%= render :partial => "sessions/manager" %> -->
+		<% if user_signed_in? %>
+		Logged in as <strong><%= current_user.email %></strong>.
+		<%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+		<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
+		<% else %>
+		<%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %> |
+		<%= link_to "Login", new_user_session_path, :class => 'navbar-link' %>
+		<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+		<% end %>
+	</section>
+</header>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+	
+<h2>Channels page</h2>
+
+<ul>
+	<% Channel.find_each do |channel| %>
+	<li><%= link_to(channel.name, channel) %></li>
+	<% end %>
+</ul>

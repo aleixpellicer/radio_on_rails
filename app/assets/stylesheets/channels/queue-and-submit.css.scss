@@ -1,0 +1,82 @@
+.song-queue  { 
+  width:100%;
+  margin-top:15px;
+}
+.song-queue h2 {
+  text-transform:uppercase;
+  font-size:1.2em;
+  margin-top:15px;
+  text-align:center;
+  color:#535353;
+  text-shadow: 1px 1px #262626;
+}
+.song-list{
+  font-size:1.2em;
+  margin-left:12px;
+  width:375px;
+}
+.song-list tr {
+  width:100%;
+  height:40px;
+  background:url(image_path('separator.png')) bottom left repeat-x
+}
+.song-list tr.titol{
+  height:30px;
+}
+.song-list tr td {
+  padding:0px 0px;
+  font-size:.90em;
+  line-height:1.2em;
+  color:#c1c1c1;
+  text-shadow: 1px 1px #000;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.song-list tr td.song-title{
+  width:80%;
+}
+.song-list tr td.song-author {
+  width:20%;
+  text-align:right;
+}
+.song-list tr td.song-title h3 {
+  padding:0;
+  margin:0;
+}
+.song-list tr:first-child td {
+  border-top:0;
+}
+
+.submit-song {
+  width: 400px;
+  height: 40px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
+.song-input {
+  color: #000;
+  width: 250px;
+  float: left;
+  margin-top: 0px;
+  height: 40px;
+  padding:0 15px;
+  margin-left: 0px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2em;
+  border: 0;
+}
+
+.submit-song-bttn {
+  display: block;
+  width: 120px;
+  height: 40px;
+  text-decoration: none;
+  font-size: 1.3em;
+  text-align: center;
+  float: left;
+  border: 0;
+  background:#292929;
+  color: #fff;
+}
