@@ -4,17 +4,26 @@ class SongsController < ApplicationController
     
   end
   def show
-    @channel = Channel.find_by(id: params[:channel_id])
+    @channel = Channel.find(params[:channel_id])
     @currentsong = @channel.songs.where.not(played: nil).order(played: :desc).limit(1)
     
     if @currentsong.empty?
       puts "="*50
       puts "currentsong empty"
       puts "="*50
-      @nextsong = @channel.songs.where(played: nil).order(id: :asc).limit(1).take
-      @nextsong.played = Time.now
-      @nextsong.save
-      @song = @nextsong
+      @nextsong = @channel.songs.where(played: nil).order(id: :asc).limit(1)
+      
+      if(@nextsong.empty?)
+        puts "="*50
+        puts "nextsong empty"
+        puts "="*50
+        @error = "No songs to play"
+      else
+        @nextsong = @nextsong.take
+        @nextsong.played = Time.now
+        @nextsong.save
+        @song = @nextsong
+      end
     else
       @currentsong = @currentsong.take
       if (Time.now - @currentsong.played) >= @currentsong.length_seconds

@@ -11,6 +11,8 @@ test_user = User.create(created_at: "2014-11-24 12:45:03", password: "12345678",
 
 general_channel = Channel.create(name: "General", user_id: test_user.id)
 rock_channel = Channel.create(name: "Rock", user_id: test_user.id)
+ironhack = Channel.create(name: "Ironhack", user_id: test_user.id)
+aleix = Channel.create(name: "Aleix's channel", user_id: test_user.id)
 
 vaina = Song.create(name: "Una vaina loca", url: "IPBmNNWvUiQ", length_seconds: 185, channel_id: general_channel.id, user_id: test_user.id)
 serenata = Song.create(name: "Serenata rap", url: "4MgKG87M0sc", length_seconds: 287, channel_id: general_channel.id, user_id: test_user.id)

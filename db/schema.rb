@@ -23,38 +23,6 @@ ActiveRecord::Schema.define(version: 20141201131943) do
     t.datetime "updated_at"
   end
 
-  create_table "playedsongs", force: true do |t|
-    t.string   "name"
-    t.string   "url"
-    t.integer  "length_seconds"
-    t.integer  "channel_id"
-    t.integer  "user_id"
-    t.datetime "played_time"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "playingsongs", force: true do |t|
-    t.string   "name"
-    t.string   "url"
-    t.integer  "length_seconds"
-    t.integer  "channel_id"
-    t.integer  "user_id"
-    t.datetime "startedplaying_time"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "queuedsongs", force: true do |t|
-    t.string   "name"
-    t.string   "url"
-    t.integer  "length_seconds"
-    t.integer  "channel_id"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "songs", force: true do |t|
     t.string   "name"
     t.string   "url"
