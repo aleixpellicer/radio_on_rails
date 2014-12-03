@@ -36,11 +36,17 @@
   margin-left:20px;
   background:url(image_path('btn-downvote.png')) -29px 0px no-repeat;
 }
+.name-box {
+  float:left;
+  width:298px;
+  height:75px;
+}
 .song-name {
   float:left;
   width:298px;
   margin-top:12px;
   margin-left:10px;
+  margin-bottom:2px;
   color:#c1c1c1;
   font-size:1.6em;
   line-height:1.2em;

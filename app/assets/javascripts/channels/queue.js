@@ -49,7 +49,6 @@
               $('.song').addClass("setForDeleting");
 
               //var deferreds = new Array();
-
               $.each(data.songs, function(key, song){
                 //console.log(song.name);
                 exists = false;
@@ -64,7 +63,7 @@
 
                 if(exists){
                   $(tr).removeClass("setForDeleting");
-                  console.log('removing class');
+                  //console.log('removing class...');
                 }
                 else
                 {
@@ -72,7 +71,7 @@
                 }
               });
 
-              console.log('starting to delete');
+              //console.log('Checking songs to delete...');
               $('.setForDeleting').each( function(i){
                 thisQueue.deletesong($(this).data("id"));
               });

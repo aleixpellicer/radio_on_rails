@@ -50,9 +50,7 @@
 
   Player.prototype = {
     onPlayerReady: function(event) {
-      //event.target.playVideo();
       topPlayer.getcurrentsong();
-
     },
     onPlayerStateChange: function(event) {
       switch(event.data)
@@ -65,7 +63,7 @@
           paused = true;
         break;
         case YT.PlayerState.PLAYING:
-          
+          //console.log("playing...");
           if(paused){
             topPlayer.getcurrentsong();
           }
@@ -91,15 +89,16 @@
               
               if(data.error)
               {
-                //console.log("Error: " + data.error);
-                //console.log("videopooling started");
+                console.log("Error: " + data.error);
+                console.log("videopooling started");
                 getCurrentSongTimeout = 5000;
                 videopolling();
               }
               else
               {
-                console.log(data.song);
-                
+                //console.log(data.song.name);
+                //console.log(data.song);
+                //console.log(data.time);
                 topPlayer.player.loadVideoById({videoId:data.song.url, startSeconds:data.time});
                 $('#sent-by-user').html();
                 $('#song-name').html(data.song.name);
