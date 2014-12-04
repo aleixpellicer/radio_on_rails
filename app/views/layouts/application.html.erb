@@ -8,31 +8,31 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="general cf">
-    <header class="main">
-      <div class="container">
-        <nav>
-          <h1 class="logo"><%= link_to(root_path) do %><%= image_tag("logo.png", class: "logo", alt: "ironrad.io") %><% end %></h1>
-          <ul class="cf">
-            <% if user_signed_in? %>
-              <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %></li>
-              <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
-              <li><span>Hello <strong><%= current_user.name %></strong></span></li>
-            <% else %>
-              <li><%= link_to(user_omniauth_authorize_path(:facebook)) do %><%=image_tag("sign-in-facebook.png", :class => 'facebook')%><% end %></li>
-              <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link' %></li>
-              <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %></li>
-            <% end %>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <% if notice %><div class="notice cf"><div class="container"><%= notice %></div></div><% end %>
-    <% if alert %><div class="alert cf"><div class="container"><%= alert %></div></div><% end %>
+  <header class="main">
     <div class="container">
-      <article class="general">
-<%= yield.gsub(/^/, "        ").html_safe %>
-      </article>
+      <nav>
+        <h1 class="logo"><%= link_to(root_path) do %><%= image_tag("logo.png", class: "logo", alt: "ironrad.io") %><% end %></h1>
+        <ul class="cf">
+          <% if user_signed_in? %>
+            <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %></li>
+            <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
+            <li><span>Hello <strong><%= current_user.name %></strong></span></li>
+          <% else %>
+            <li><%= link_to(user_omniauth_authorize_path(:facebook)) do %><%=image_tag("sign-in-facebook.png", :class => 'facebook')%><% end %></li>
+            <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link' %></li>
+            <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %></li>
+          <% end %>
+        </ul>
+      </nav>
     </div>
+  </header>
+  <% if notice %><div class="notice cf"><div class="container"><%= notice %></div></div><% end %>
+  <% if alert %><div class="alert cf"><div class="container"><%= alert %></div></div><% end %>
+  <div class="container">
+    <article class="general">
+<%= yield.gsub(/^/, "      ").html_safe %>
+    </article>
+  </div>
   <footer class="main">
     <div class="container">
       <nav>
