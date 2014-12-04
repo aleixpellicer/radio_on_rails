@@ -18,3 +18,170 @@ body {
   font-family: 'Open Sans Condensed', sans-serif;
   font-size:11px;
 }
+
+body.general {
+  background-color: #f9f9f9;
+}
+
+.container {
+  width:900px;
+  margin: 0 auto;
+}
+
+header.main {
+  background: #f2f2f2;
+  width:100%;
+  height:40px;
+}
+
+header.main h1 {
+  margin: 0;
+  float:left;
+  width:200px;
+  margin-top:5px;
+}
+
+footer.main {
+  position:absolute;
+  bottom:0;
+  width:100%;
+  background: #f2f2f2;
+  width:100%;
+  height:40px;
+}
+
+footer.main h1 {
+  margin: 0;
+  float:left;
+  width:200px;
+  margin-top:5px;
+}
+
+article.general {
+  margin-top:40px;
+}
+
+
+.main_title {
+  color:#464646;
+  font-size:2.5em;
+  padding:0 0 10px 0;
+  text-align:center;
+}
+
+.main_title.bottom {
+  margin-top:20px;
+}
+
+.content {
+  padding:30px;
+  background:#f2f2f2;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  p {
+    color: #000;
+    font-size:1.4em;
+    text-align:center;
+    font-family: "Arial", sans-serif;
+  }
+}
+
+.me-info {
+  float:left;
+  margin-left:20px;
+  color: #000;
+  h2 {
+    font-size:2em;
+  }
+  h3 {
+    font-size: 1.6em;
+  }
+}
+
+.me-contact {
+  float:right;
+  width:300px;
+  margin-left:20px;
+  font-size:1.4em;
+  a { color:#000; }
+}
+
+.aside-follow {
+  color:#000;
+}
+
+.photo {
+  width:100px;
+  float:left;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.channels {
+  margin-top:5px;
+  li {
+    width:210px;
+    height:140px;
+    background:#000;
+    margin-bottom:20px;
+    margin-right:20px;
+    float:left;
+    position:relative;
+    img {
+      position:absolute;
+      top:0;
+      left:0;
+      z-index:0;
+    }
+    img.bg-background {
+      z-index:1;
+    }
+    a {
+      color: #fff;
+    }
+    h2 {
+      position:absolute;
+      width:210px;
+      top:50px;
+      text-align:center;
+      font-size:2.4em;
+      z-index:2;
+    }
+  }
+  li:nth-of-type(4n+0) {
+    margin-right:0;
+  }
+}
+
+nav {
+  ul {
+    width: 300px;
+    float:right;
+    li {
+      float:right;
+      text-align:right;
+      margin-left:10px;
+      font-size:1.4em;
+      margin-top:4px;
+      .facebook {
+        margin-top: 4px;
+      }
+      a {
+        color: #000;
+        text-decoration:none;
+        font-weight: bold;
+      }
+      a.navbar-link {
+        display:block;
+        margin-top:5px;
+      }
+      span {
+        display:block;
+        margin-top:5px;
+        color: #000;
+      }
+    }
+  }
+}

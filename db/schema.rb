@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20141201131943) do
 
   create_table "channels", force: true do |t|
     t.string   "name"
+    t.string   "image"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"

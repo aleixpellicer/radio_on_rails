@@ -10,6 +10,9 @@ Rails.application.routes.draw do
     get 'queue' => 'songs#queue'
   end
 
+  get 'changelog' => 'statics#changelog'
+  get 'about' => 'statics#about'
+  get 'team' => 'statics#team'
 
 
 
