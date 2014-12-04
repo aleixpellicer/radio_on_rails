@@ -230,3 +230,26 @@ nav {
     }
   }
 }
+
+@media (min-width: 0px) and (max-width: 1024px) {
+  
+  .container {
+    width:700px;
+    margin: 0 auto;
+  }
+
+  .channels {
+    li {
+      width:160px;
+      height:107px;
+      img {
+        width:160px;
+      }
+      h2 {
+        width:160px;
+        top:35px;
+      }
+    }
+  }
+
+}
