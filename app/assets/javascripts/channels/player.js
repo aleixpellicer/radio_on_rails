@@ -100,7 +100,7 @@
                 //console.log(data.song);
                 //console.log(data.time);
                 topPlayer.player.loadVideoById({videoId:data.song.url, startSeconds:data.time});
-                $('#sent-by-user').html();
+                $('#sent-by-user').html(data.user);
                 $('#song-name').html(data.song.name);
                 oQueue.update();
                 getCurrentSongTimeout = 0;

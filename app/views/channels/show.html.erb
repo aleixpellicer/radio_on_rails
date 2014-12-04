@@ -8,7 +8,7 @@
       <a href="#" title="Close playlist"><%= image_tag("btn-hide-sidebar.png", class: "closePlaylistBttn swap-sidebar", alt: "Close") %></a>
       <a href="#" title="Open playlist"><%= image_tag("btn-show-sidebar.png", class: "openPlaylistBttn swap-sidebar", alt: "Open") %></a>
       <div class="sidebar-online-users">1 listener</div>
-      <div class="sidebar-channel">canal General</div>
+      <div class="sidebar-channel"><%= link_to(root_path) do %><%= @channel.name %> CHANNEL<% end %></div>
     </header>
     <article class="playing-video-box">
       <div class="voting-box">

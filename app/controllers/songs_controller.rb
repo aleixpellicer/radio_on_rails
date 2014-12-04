@@ -21,14 +21,19 @@ class SongsController < ApplicationController
   def queue
     @channel = Channel.find_by(id: params[:channel_id])
     @songs = @channel.songs.where(played: nil).order(played: :desc)
+    #binding.pry
   end
   def create
-    client = YouTubeIt::Client.new
-    search = client.videos_by(:query => params[:song]["q"], :maxResults => 1)
-    video = search.videos.first
-    if video
-      @song = Song.create(name: video.title, url: video.unique_id, length_seconds: video.duration, channel_id: params[:channel_id], user_id: 1)
-      respond_to :js
+    if user_signed_in?
+      client = YouTubeIt::Client.new
+      search = client.videos_by(:query => params[:song]["q"], :maxResults => 1)
+      video = search.videos.first
+      if video
+        @song = Song.create(name: video.title, url: video.unique_id, length_seconds: video.duration, channel_id: params[:channel_id], user_id: current_user.id)
+        respond_to :js
+      end
+    else
+      render :js => "window.location.href = ('/users/sign_in');" 
     end
   end
 

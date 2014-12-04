@@ -87,6 +87,51 @@ article.general {
   }
 }
 
+div.notice {
+  color:#000;
+  width:100%;
+  background:#ccc;
+  padding:8px;
+  text-align:center;
+  font-size:1.2em;
+  font-weight:bold;
+
+}
+
+.auth {
+  background:#f2f2f2;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  padding:30px;
+  width:400px;
+  margin:0 auto;
+  color:#000;
+  input { 
+    width:340px;
+    margin-top:2px;
+    margin-bottom:4px;
+    padding:8px;
+  }
+  input.check {
+    width:auto;
+  }
+  label {
+    font-size:1.2em;
+    font-weight:bold;
+  }
+  h2 {
+    text-align:center;
+    font-size:2em;
+  }
+  a {
+    font-size:1.2em;
+    font-weight:bold;
+    color:#666;
+    line-height:1.6em;
+  }
+}
+
 .me-info {
   float:left;
   margin-left:20px;

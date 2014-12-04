@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20141201131943) do
     t.datetime "locked_at"
     t.string   "provider"
     t.string   "uid"
+    t.string   "name"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

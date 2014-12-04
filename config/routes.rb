@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
-  devise_for :users,  :controllers => {sessions: 'sessions', omniauth_callbacks: 'users/omniauth_callbacks' }
+  devise_for :users,  :controllers => {sessions: 'sessions', registrations: 'registrations', omniauth_callbacks: 'users/omniauth_callbacks' }
+
   root to: "channels#index"
 
 
