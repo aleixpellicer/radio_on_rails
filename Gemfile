@@ -40,6 +40,9 @@ gem "letter_opener", :group => :development
 gem 'omniauth-facebook'
 
 gem 'pry'
+
+gem 'activeadmin', github: 'activeadmin'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
