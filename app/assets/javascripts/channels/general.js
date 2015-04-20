@@ -36,7 +36,7 @@ $(document).ready(function() {
   }, 3000);
 
 	$('#fullscreen').click( function(e){
-		oGui.fullScreen();
+	   oGui.fullScreen();
 	});
 
 	$('.swap-sidebar').click( function(e){

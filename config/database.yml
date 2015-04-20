@@ -3,21 +3,21 @@ development:
  encoding: unicode
  database: radio_development
  pool: 5
- username: refusion
- password: 123456
+ username: aleix
+ password: development
 
 test:
  adapter: postgresql
  encoding: unicode
  database: radio_test
  pool: 5
- username: refusion
- password: 123456
+ username: aleix
+ password: development
 
 production:
  adapter: postgresql
  encoding: unicode
  database: radio_production
  pool: 5
- username: refusion
- password: 123456
+ username: aleix
+ password: development

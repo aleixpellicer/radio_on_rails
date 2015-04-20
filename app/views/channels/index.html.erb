@@ -3,4 +3,8 @@
   <% Channel.find_each do |channel| %>
     <li><%= link_to(channel) do %><h2><%=channel.name%></h2><%= image_tag("bg-song.png", class: 'bg-background') %><%= image_tag(channel.image) %><% end %></li>
   <% end %>
+  <%= form_for @channel do |f| %>
+    <%= f.text_field :name, class:"song-input", placeholder: "Channel name" %>
+    <%= f.submit 'Create channel', class:"submit-song-bttn" %>
+  <% end %>
 </ul>
